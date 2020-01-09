@@ -1,0 +1,85 @@
+node_modules : C:\Program Files\nodejs\node_modules\npm
+
+
+request to http://registry.npmjs.org/@angular%2fcli failed, reason: connect ECONNREFUSED 104.16.27.35:80'
+----------------------------------------------------------------------------------------------------------
+C:\Users\690308>npm config set proxy null npm config set https-proxy null
+
+C:\Users\690308>npm config set registry http://registry.npmjs.org/
+
+
+Update npm:
+=================
+npm i -g npm
+
+
+Set Proxy:
+==============
+npm config set proxy http://proxy.cognizant.com:6050
+npm config set https-proxy http://proxy.cognizant.com:6050
+
+
+Remove Proxy
+=============
+npm config rm proxy   
+npm config rm https-proxy
+
+
+How to check the current proxy
+===============================
+npm config get proxy
+
+Clear Cache :
+====================
+npm install --cache /tmp/empty-npm-cache
+npm cache clean --force
+
+Package lock enabled:
+==========================
+Make sure your package-lock globally enabled, you can enable it using:
+ -> npm config set package-lock true
+
+To make sure your .npmrc is not blocking the creation of package-lock file, set this to your .npmrc
+ -> echo 'package-lock=true' >> .npmrc
+
+
+
+Errors:
+===========
+1) 
+Command : npm install -g @angular/cli@7.0.3
+Errior  : FetchError: request to http://registry.npmjs.org/@angular%2fcli failed, reason: connect ECONNREFUSED 104.16.26.35:80
+Sol-> Set proxy
+
+2) 
+Command : npm install -g @angular/cli@7.0.3
+Error   : npm ERR! code EINTEGRITY
+	npm ERR! sha512-+ux3lx6peh0BpvY0JebGyZoiR4D+oYzdPZMKJwkZ+sFkNJzpL7tXc/wehS49gUAxg3tmMHPHZkA8JU2rhhgDHw== integrity checksum failed when using sha512: wanted sha512-+ux3lx6peh0BpvY0JebGyZoiR4D+oYzdPZMKJwkZ			+sFkNJzpL7tXc/wehS49gUAxg3tmMHPHZkA8JU2rhhgDHw== but got sha512-KAy09Pf81niilsqUm8qM+lAYc+r013UUEggt1RQtWsAjdJEYKSQyZbA1aFZtHfZ5GFMCz9KYPdTYmz2n/pr5Eg==. (1631 bytes)
+	npm WARN tar invalid entry
+Sol -> 	1) reopend command prompt and remove .npmrc, package-lock.json, package.json file
+	2) next run below commands
+		npm config set proxy http://proxy.cognizant.com:6050
+		npm config set https-proxy http://proxy.cognizant.com:6050
+		npm install -g @angular/cli@8.3.19
+	  
+3)
+Error : You are running version v8.12.0 of Node.js, which is not supported by Angular CLI 8.0+.
+The official Node.js version that is supported is 10.9 or greater.
+
+
+4) Admin access
+Sol -> reg command prompt access :- Please open the command prompt by double click..in command prompt type as cmd.exe npm then command prompt
+ will turn into admin mode post that enter the following command which requires 
+ 
+
+5) ng serve
+Error : Data path ".builders['app-shell']" should have required property 'class'.
+Solv -> use below commands
+	npm uninstall @angular-devkit/build-angular
+	npm install @angular-devkit/build-angular@0.13.0
+  
+ 
+
+
+
+
