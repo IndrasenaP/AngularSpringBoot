@@ -1,0 +1,38 @@
+Create project/component:
+==================================
+>ng new todo
+
+> ng serve
+
+> ng lint -> it will check coding standerd 
+
+> ng build  -> compile files and create dist folder and put todo project compiled files.
+
+> ng test -> run the test cases and running by Karma tool for debug. Ex.. see in .spec.ts files. this for test indidual components.. one at a time
+
+> ng e2e  -> e2e standerds for ng end 2 end test.
+
+
+Create Component:
+=======================
+>ng generate component welcome
+ or
+ ng g c welcome
+
+
+Create services:(Ex : authentication)
+========================================
+>ng generate service service/hardcodeAuthentication
+
+Key Words:
+===========
+ngModule : Angular Module
+interpolation : {{}} -> one way binding (component -> browser)
+data binding : (event)='whatcanyoudo()'
+Banana In a Box : [(ngModel)]="variable name" -> two way bindng (component <-> browser). 	FormsModule will help here and declare in app.component.js file
+
+
+routerLink : <a routerLink="/todos">here</a> . it reloads entire page. use routerLink instead of href in <a> tag
+
+Format(date and uppercase) apply in html : Ex - <td>{{todo.completed | date | uppercase}}</td>
+
