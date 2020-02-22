@@ -8,3 +8,4 @@ Required Softwares for Angular:
 2) npm 6.4.1 (6.0.0 or above)
 3) Visual Studio Code 1.41.1 
 
+UR : http://localhost:4200/todos
